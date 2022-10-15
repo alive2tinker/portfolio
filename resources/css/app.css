@@ -1,0 +1,26 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[x-cloak] {
+    display: none;
+}
+
+
+@layer base {
+    @font-face {
+        font-family: 'DancingScript_Bold';
+        src: url("../../public/fonts/Dancing_Script/static/DancingScript-Bold.ttf");
+    }
+    @font-face {
+        font-family: 'Cairo';
+        src: url("../../public/fonts/Cairo/static/Cairo-Regular.ttf");
+    }
+    html{
+        font-family: Cairo;
+    }
+    .logo {
+        font-family: DancingScript_Bold, sans-serif;
+    }
+}
