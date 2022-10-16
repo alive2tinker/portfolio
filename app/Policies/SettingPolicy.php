@@ -18,7 +18,7 @@ class SettingPolicy
      */
     public function viewAny(User $user)
     {
-        //
+        return $user->id === 1;
     }
 
     /**
@@ -30,7 +30,7 @@ class SettingPolicy
      */
     public function view(User $user, Setting $setting)
     {
-        //
+        return $user->id === $setting->user->id;
     }
 
     /**
@@ -41,7 +41,7 @@ class SettingPolicy
      */
     public function create(User $user)
     {
-        //
+        return $user->id === 1;
     }
 
     /**
@@ -53,7 +53,7 @@ class SettingPolicy
      */
     public function update(User $user, Setting $setting)
     {
-        //
+        return $user->id === $setting->user->id;
     }
 
     /**
@@ -65,7 +65,7 @@ class SettingPolicy
      */
     public function delete(User $user, Setting $setting)
     {
-        //
+        return $user->id === $setting->user->id;
     }
 
     /**
@@ -77,7 +77,7 @@ class SettingPolicy
      */
     public function restore(User $user, Setting $setting)
     {
-        //
+        return $user->id === $setting->user->id;
     }
 
     /**
@@ -89,6 +89,6 @@ class SettingPolicy
      */
     public function forceDelete(User $user, Setting $setting)
     {
-        //
+        return $user->id === $setting->user->id;
     }
 }

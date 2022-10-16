@@ -18,7 +18,7 @@ class MenuLinkPolicy
      */
     public function viewAny(User $user)
     {
-        //
+        return $user->id === 1;
     }
 
     /**
@@ -30,7 +30,7 @@ class MenuLinkPolicy
      */
     public function view(User $user, MenuLink $menuLink)
     {
-        //
+        return $user->id === $menuLink->user->id;
     }
 
     /**
@@ -41,7 +41,7 @@ class MenuLinkPolicy
      */
     public function create(User $user)
     {
-        //
+        return $user->id === 1;
     }
 
     /**
@@ -53,7 +53,7 @@ class MenuLinkPolicy
      */
     public function update(User $user, MenuLink $menuLink)
     {
-        //
+        return $user->id === $menuLink->user->id;
     }
 
     /**
@@ -65,7 +65,7 @@ class MenuLinkPolicy
      */
     public function delete(User $user, MenuLink $menuLink)
     {
-        //
+        return $user->id === $menuLink->user->id;
     }
 
     /**
@@ -77,7 +77,7 @@ class MenuLinkPolicy
      */
     public function restore(User $user, MenuLink $menuLink)
     {
-        //
+        return $user->id === $menuLink->user->id;
     }
 
     /**
@@ -89,6 +89,6 @@ class MenuLinkPolicy
      */
     public function forceDelete(User $user, MenuLink $menuLink)
     {
-        //
+        return $user->id === $menuLink->user->id;
     }
 }

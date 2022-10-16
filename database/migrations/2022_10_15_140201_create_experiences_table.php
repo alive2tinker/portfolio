@@ -22,6 +22,7 @@ return new class extends Migration
             $table->json('position');
             $table->json('duties');
             $table->foreignId('user_id');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

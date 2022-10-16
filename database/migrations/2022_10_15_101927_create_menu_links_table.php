@@ -20,6 +20,7 @@ return new class extends Migration
             $table->enum('location', ['top','bottom','both']);
             $table->foreignId('menu_link_id')->nullable();
             $table->foreignId('user_id');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

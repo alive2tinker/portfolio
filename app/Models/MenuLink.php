@@ -4,11 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Translatable\HasTranslations;
 
 class MenuLink extends Model
 {
-    use HasFactory, hasTranslations;
+    use HasFactory, hasTranslations, SoftDeletes;
 
     protected $fillable = [
         'name',

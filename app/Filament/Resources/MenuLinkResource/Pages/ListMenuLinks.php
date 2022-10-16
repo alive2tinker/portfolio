@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Filament\Resources\MenuLinkResource\Pages;
+
+use App\Filament\Resources\MenuLinkResource;
+use Filament\Pages\Actions;
+use Filament\Resources\Pages\ListRecords;
+
+class ListMenuLinks extends ListRecords
+{
+    protected static string $resource = MenuLinkResource::class;
+
+    protected function getActions(): array
+    {
+        return [
+            Actions\CreateAction::make(),
+        ];
+    }
+}

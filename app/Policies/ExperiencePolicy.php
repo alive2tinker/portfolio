@@ -18,7 +18,7 @@ class ExperiencePolicy
      */
     public function viewAny(User $user)
     {
-        //
+        return $user->id === 1;
     }
 
     /**
@@ -30,7 +30,7 @@ class ExperiencePolicy
      */
     public function view(User $user, Experience $experience)
     {
-        //
+        return $user->id === $experience->user->id;
     }
 
     /**
@@ -41,7 +41,7 @@ class ExperiencePolicy
      */
     public function create(User $user)
     {
-        //
+        return $user->id === 1;
     }
 
     /**
@@ -53,7 +53,7 @@ class ExperiencePolicy
      */
     public function update(User $user, Experience $experience)
     {
-        //
+        return $user->id === $experience->user->id;
     }
 
     /**
@@ -65,7 +65,7 @@ class ExperiencePolicy
      */
     public function delete(User $user, Experience $experience)
     {
-        //
+        return $user->id === $experience->user->id;
     }
 
     /**
@@ -77,7 +77,7 @@ class ExperiencePolicy
      */
     public function restore(User $user, Experience $experience)
     {
-        //
+        return $user->id === $experience->user->id;
     }
 
     /**
@@ -89,6 +89,6 @@ class ExperiencePolicy
      */
     public function forceDelete(User $user, Experience $experience)
     {
-        //
+        return $user->id === $experience->user->id;
     }
 }

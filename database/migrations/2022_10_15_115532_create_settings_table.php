@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('group')->nullable();
             $table->json('meta')->nullable();
             $table->foreignId('user_id');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

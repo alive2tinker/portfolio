@@ -18,6 +18,7 @@ return new class extends Migration
             $table->json('title');
             $table->decimal('percentage');
             $table->foreignId('user_id');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

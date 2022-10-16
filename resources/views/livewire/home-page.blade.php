@@ -15,27 +15,43 @@
         </ul>
     </div>
     <!-- projects carousel -->
-    <div x-data="projectsCarousel" x-cloak>
-        <section id="image-carousel" class="splide" aria-label="Beautiful Images" id="projects-carousel">
+    <div class="py-5" x-data="projectsCarousel" x-cloak>
+        <div id="image-carousel" class="splide" aria-label="Beautiful Images" id="projects-carousel">
             <div class="splide__track">
                 <ul class="splide__list">
-                    <li class="splide__slide">
-                        <img src="https://i0.wp.com/alabamanewscenter.com/wp-content/uploads/2022/09/GettyImages-1418018180.jpg?fit=1200%2C675&ssl=1" alt="">
-                    </li>
-                    <li class="splide__slide">
-                        <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/the-beautiful-cala-goloritze-in-sardinia-royalty-free-image-1149841315-1559070275.jpg" alt="">
-                    </li>
-                    <li class="splide__slide">
-                        <img src="https://res.klook.com/image/upload/fl_lossy.progressive/q_auto/c_fill,w_750/w_1200/blogen/2018/04/image9.jpg" alt="">
+                    <li class="splide__slide max-w-xl sm:max-w-3xl mx-auto px-4">
+                        <img class="rounded-lg" src="https://i0.wp.com/alabamanewscenter.com/wp-content/uploads/2022/09/GettyImages-1418018180.jpg?fit=1200%2C675&ssl=1" alt="">
                     </li>
                 </ul>
             </div>
-        </section>
+            <div class="flex justify-center py-4">
+                <div>
+                    <template x-cloak x-for="(page, currentIndex) in pages" :key="currentIndex">
+                        <div  :class="{'w-2 h-2 rounded-full bg-zinc-800 dark:bg-zinc-500': true, 'w-11 rounded-md': isCurrent(currentIndex)}"></div>
+                    </template>
+                </div>
+            </div>
+        </div>
         <script>
             function projectsCarousel(){
                 return {
+                    projectsCarousel: null,
+                    pages: 0,
                     init(){
-                        new Splide('#projects-carousel').mount();
+                        this.projectsCarousel = new Splide('.splide', {
+                            perPage:1,
+                            gap: '4em',
+                            arrows: false,
+                            pagination: false,
+                            direction: '{{ app()->getLocale() === "ar" ? "rtl" : "ltr"}}'
+                        });
+
+
+                        this.projectsCarousel.mount();
+                        this.pages = this.projectsCarousel.Components.Elements.slides.length
+                    },
+                    isCurrent(i){
+                        return this.projectsCarousel.index === i;
                     }
                 }
             }
