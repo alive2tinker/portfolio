@@ -31,6 +31,14 @@ class DatabaseSeeder extends Seeder
                 'rights' => [
                     'en' => 'Spencer Sharp. All rights reserved.',
                     'ar' => 'عبدالملك السفيران. جميع الحقوق محفوظة'
+                ],
+                'projects_header' => [
+                    'en' => "Some of the things I've worked on",
+                    'ar' => "بعض المشاريع التي اشتغلت عليها مسبقا"
+                ],
+                'projects_subheader' => [
+                    'en' => "",
+                    'ar' => ""
                 ]
             ]
         ]);

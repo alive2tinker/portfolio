@@ -73,4 +73,9 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
     {
         return $this->id === 1;
     }
+
+    public function projects()
+    {
+        return $this->hasMany(Project::class);
+    }
 }

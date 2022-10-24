@@ -17,7 +17,12 @@ class Project extends Model
         'icon',
         'image',
         'link',
+        'technologies',
         'user_id'
+    ];
+
+    protected $casts = [
+        'technologies' => "array"
     ];
 
     public $translatable = ['title','excerpt'];

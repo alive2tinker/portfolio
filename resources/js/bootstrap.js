@@ -22,9 +22,9 @@ Alpine.plugin(persist)
 
 Alpine.start();
 
-import Splide from '@splidejs/splide'
+// import Splide from '@splidejs/splide'
 
-window.Splide = Splide;
+// window.Splide = Splide;
 
 
 /**

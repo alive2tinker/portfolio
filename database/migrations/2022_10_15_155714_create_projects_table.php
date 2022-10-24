@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('icon')->nullable();
             $table->string('image')->nullable();
             $table->string('link')->nullable();
+            $table->json('technologies')->nullable();
             $table->foreignId('user_id');
             $table->softDeletes();
             $table->timestamps();

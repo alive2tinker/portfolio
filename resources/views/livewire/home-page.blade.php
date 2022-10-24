@@ -19,15 +19,19 @@
         <div id="image-carousel" class="splide" aria-label="Beautiful Images" id="projects-carousel">
             <div class="splide__track">
                 <ul class="splide__list">
+                    @foreach($user->projects as $project)
                     <li class="splide__slide max-w-xl sm:max-w-3xl mx-auto px-4">
-                        <img class="rounded-lg" src="https://i0.wp.com/alabamanewscenter.com/wp-content/uploads/2022/09/GettyImages-1418018180.jpg?fit=1200%2C675&ssl=1" alt="">
+                        <img class="rounded-lg w-screen max-h-96" src="{{ $project->image }}" alt="">
                     </li>
+                    @endforeach
                 </ul>
             </div>
             <div class="flex justify-center py-4">
-                <div>
-                    <template x-cloak x-for="(page, currentIndex) in pages" :key="currentIndex">
-                        <div  :class="{'w-2 h-2 rounded-full bg-zinc-800 dark:bg-zinc-500': true, 'w-11 rounded-md': isCurrent(currentIndex)}"></div>
+                <div class="flex space-x-3">
+                    <template x-cloak x-for="(page, index) in pages" :key="index">
+                        <button :id="`pagination-${currentIndex}`" :class="{'w-2 bg-zinc-800 h-2 rounded':true, 'w-11':isCurrent(index)}">
+                            
+                        </button>
                     </template>
                 </div>
             </div>
@@ -35,6 +39,7 @@
         <script>
             function projectsCarousel(){
                 return {
+                    currentIndex:0,
                     projectsCarousel: null,
                     pages: 0,
                     init(){
@@ -42,16 +47,21 @@
                             perPage:1,
                             gap: '4em',
                             arrows: false,
-                            pagination: false,
+                            pagination: true,
                             direction: '{{ app()->getLocale() === "ar" ? "rtl" : "ltr"}}'
                         });
 
-
+                        this.projectsCarousel.on('pagination:mounted', (data) => {
+                                data.list.classList.add('hidden');
+                            });
+                            this.projectsCarousel.on('pagination:updated', (data, prev, curr) => {
+                                this.currentIndex = curr.page;
+                            });
                         this.projectsCarousel.mount();
                         this.pages = this.projectsCarousel.Components.Elements.slides.length
                     },
                     isCurrent(i){
-                        return this.projectsCarousel.index === i;
+                        return this.currentIndex === i;
                     }
                 }
             }

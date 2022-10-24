@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\ProjectsPage;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,4 +18,5 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 {
     /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
     Route::get('/', \App\Http\Livewire\HomePage::class);
+    Route::get('/projects', ProjectsPage::class);
 });
