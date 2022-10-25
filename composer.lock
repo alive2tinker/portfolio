@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c6241da8a97e8af90daaa7fdd569d98a",
+    "content-hash": "1532fadf5fb5b7eaeb7f6032c89cde18",
     "packages": [
         {
             "name": "akaunting/laravel-money",
@@ -6364,6 +6364,62 @@
             "time": "2021-09-14T08:27:50+00:00"
         },
         {
+            "name": "themsaid/wink",
+            "version": "v1.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/themsaid/wink.git",
+                "reference": "0f71fc56a10e81057ec5a753e38621bad65c1064"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/themsaid/wink/zipball/0f71fc56a10e81057ec5a753e38621bad65c1064",
+                "reference": "0f71fc56a10e81057ec5a753e38621bad65c1064",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^7.0||^8.0||^9.0",
+                "php": "^7.3||^7.4||^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Wink\\WinkServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Wink\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mohamed Said",
+                    "email": "mohamed@laravel.com"
+                }
+            ],
+            "description": "Wink Publishing Framework.",
+            "keywords": [
+                "blog",
+                "framework",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/themsaid/wink/issues",
+                "source": "https://github.com/themsaid/wink/tree/v1.3.2"
+            },
+            "time": "2022-02-25T07:31:21+00:00"
+        },
+        {
             "name": "tijsverkoyen/css-to-inline-styles",
             "version": "2.2.5",
             "source": {
@@ -9085,5 +9141,5 @@
         "php": "^8.0.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }

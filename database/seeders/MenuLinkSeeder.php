@@ -30,7 +30,7 @@ class MenuLinkSeeder extends Seeder
                 'en' => 'Articles',
                 'ar' => 'مقالات'
             ],
-            'link' => '/about',
+            'link' => '/articles',
             'location' => 'both',
             'user_id' => 1
         ]);

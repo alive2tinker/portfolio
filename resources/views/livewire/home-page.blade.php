@@ -1,6 +1,7 @@
 <div class="py-12">
     <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
         <div class="mx-5 col-span-3">
+            <img class="rounded-full w-24 my-7" src="{{ asset('images/1652505616025.jpeg') }}" alt="">
             <h1 class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">{{ $user->meta['main_description'][app()->getLocale()] }}</h1>
             <p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">{{ $user->meta['sub_description'][app()->getLocale()] }}</p>
         </div>
@@ -67,7 +68,7 @@
             }
         </script>
     </div>
-    <div class="max-w-4xl mx-auto px-5 py-7">
+    <div class="max-w-5xl mx-auto py-7">
         <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 px-5 py-7">
             <div class="col-span-2">
                 <h1 class="text-2xl font-bold tracking-tight text-zinc-500 py-4 dark:text-zinc-100 sm:text-3xl">{{ __('Experience')}}</h1>
@@ -109,7 +110,7 @@
                         @endforeach
                     </ol>
                     <a class="inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none bg-zinc-50 font-medium text-zinc-900 hover:bg-zinc-100 active:bg-zinc-100 active:text-zinc-900/60 dark:bg-zinc-800/50 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 dark:active:bg-zinc-800/50 dark:active:text-zinc-50/70 group mt-6 w-full"
-                       href="/#">{{ __('Download CV') }}
+                       href="{{ route('fetchCV') }}">{{ __('Download CV') }}
                         <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"
                              class="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50">
                             <path d="M4.75 8.75 8 12.25m0 0 3.25-3.5M8 12.25v-8.5" stroke-width="1.5"
@@ -122,11 +123,7 @@
     <!-- contact form -->
     <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
         <div class="px-5 col-span-2">
-            <h1 class="text-2xl font-bold tracking-tight text-zinc-500 dark:text-zinc-100 sm:text-3xl">{{ __('Send a Message')}}</h1>
-            <livewire:contact-form/>
-        </div>
-        <div class="px-5 col-span-2">
-            <h1 class="text-2xl mt-0.5 font-bold tracking-tight text-zinc-500 dark:text-zinc-100 sm:text-3xl">{{ __('Or Get In Touch')}}</h1>
+            <h1 class="text-2xl mt-0.5 font-bold tracking-tight text-zinc-500 dark:text-zinc-100 sm:text-3xl">{{ __('Get In Touch')}}</h1>
             <div class="py-7">
                 <ul class="space-y-4">
                     @foreach($contact_methods as $contact_method)

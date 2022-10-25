@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\CVController;
+use App\Http\Livewire\AboutPage;
+use App\Http\Livewire\ArticlesPage;
 use App\Http\Livewire\ProjectsPage;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +19,9 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 {
     /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
-    Route::get('/', \App\Http\Livewire\HomePage::class);
-    Route::get('/projects', ProjectsPage::class);
+    Route::get('/', \App\Http\Livewire\HomePage::class)->name('home-page');
+    Route::get('/about', AboutPage::class)->name('about');
+    Route::get('/projects', ProjectsPage::class)->name('projects');
+    Route::get('/articles', ArticlesPage::class)->name('articles');
+    Route::get('/cv', CVController::class)->name('fetchCV');
 });

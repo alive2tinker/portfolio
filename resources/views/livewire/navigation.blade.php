@@ -1,13 +1,17 @@
 <div>
     <div class="flex py-4">
         <div class="flex-1 px-4 pt-1">
-            <a href="/" class="logo text-2xl dark:text-zinc-500">malikthefullstack.com</a>
+            <a href="{{ route('home-page') }}" class="logo text-2xl dark:text-zinc-500">malikthefullstack.com</a>
         </div>
         <div class="sm:flex-1 hidden sm:block">
             <div class="shadow-md dark:bg-zinc-800 rounded-full py-2">
                 <ul class="flex justify-around">
                     @foreach($links as $link)
+                        @if(Route::has(strtolower($link->name)))
+                        <li class="text-sm text-zinc dark:text-zinc-100"><a href="{{ route(strtolower($link->name)) }}"> {{ $link->name }} </a></li>
+                        @else
                         <li class="text-sm text-zinc dark:text-zinc-100"><a href="{{ $link->link }}"> {{ $link->name }} </a></li>
+                        @endif
                     @endforeach
                 </ul>
             </div>
