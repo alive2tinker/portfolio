@@ -13,7 +13,7 @@
                     <img class="" src="{{ asset('storage/' . $project->icon ) }}" alt="">
                     </div>
                     <h2 class="mt-6 text-xl font-bold text-zinc-800 dark:text-zinc-100">
-                        {{ $project->title }} @if(!$project->live) <span class="rounded-full text-sm my-2 bg-teal-100 px-4 text-teal-500 font-semibold">{{ __('Soon') }}</span> @endif
+                        {{ $project->title }} @if(!$project->live) <span class="rounded-full text-sm my-2 bg-red-100 border border-red-500 px-4 text-red-500 font-semibold">{{ __('Soon') }}</span> @endif
                     </h2>
                     <p class="text-zinc-800 dark:text-zinc-400">{{ strip_tags($project->excerpt) }}</p>
                     <div class="grid grid-cols-3 gap-1 py-4">
