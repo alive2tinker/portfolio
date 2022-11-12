@@ -5,7 +5,9 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\ProjectResource\Pages;
 use App\Filament\Resources\ProjectResource\RelationManagers;
 use App\Models\Project;
+use Filament\Facades\Filament;
 use Filament\Forms;
+use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
@@ -35,6 +37,7 @@ class ProjectResource extends Resource
                 FileUpload::make('icon')->image(),
                 FileUpload::make('image')->image(),
                 TextInput::make('link')->label('Project Link')->translateLabel(),
+                Checkbox::make('live')->label('is project live?')->translateLabel(),
                 Repeater::make('technologies')
                 ->schema([
                     TextInput::make('name')
