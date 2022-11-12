@@ -170,7 +170,7 @@
         </div>
     </div>
     <!-- contact form -->
-    <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
+    <div class="grid grid-cols-1 sm:grid-cols-4 gap-4" id="contact-form">
         <div class="px-5 col-span-2">
             <h1 class="text-2xl mt-0.5 font-bold tracking-tight text-zinc-500 dark:text-zinc-100 sm:text-3xl">{{ __('Get In Touch')}}</h1>
             <div class="py-7">
