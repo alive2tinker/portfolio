@@ -19,9 +19,9 @@ class CVController extends Controller
         try{
             switch($type){
                 case 'word':
-                    return Storage::disk('public')->download($user->word_cv);
+                    return $user->word_cv != null ? Storage::disk('public')->download($user->word_cv) : redirect()->back();
                 case 'pdf':
-                    return Storage::disk('public')->download($user->pdf_cv);
+                    return $user->pdf_cv != null ? Storage::disk('public')->download($user->pdf_cv) : redirect()->back();
             }
         }catch(\Exception $e){
             return redirect()->back();
