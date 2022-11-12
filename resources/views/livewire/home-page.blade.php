@@ -21,9 +21,11 @@
             <div class="splide__track">
                 <ul class="splide__list">
                     @foreach($user->projects as $project)
-                    <li class="splide__slide max-w-xl sm:max-w-3xl mx-auto px-4">
+                        @if($project->image)
+                        <li class="splide__slide max-w-xl sm:max-w-3xl mx-auto px-4">
                         <img class="rounded-lg w-screen max-h-96" src="{{ asset('storage/' . $project->image) }}" alt="">
                     </li>
+                        @endif
                     @endforeach
                 </ul>
             </div>
