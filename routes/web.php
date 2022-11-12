@@ -23,5 +23,5 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/about', AboutPage::class)->name('about');
     Route::get('/projects', ProjectsPage::class)->name('projects');
     Route::get('/articles', ArticlesPage::class)->name('articles');
-    Route::get('/cv', CVController::class)->name('fetchCV');
+    Route::get('/cv/{user}', CVController::class)->name('fetchCV');
 });
