@@ -1,9 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require("tailwindcss/defaultTheme");
 module.exports = {
-    corePlugins: {
-        preflight: false,
-    },
+    // prefix: 'tw',
     darkMode: "class",
     content: [
         "./resources/**/*.blade.php",
