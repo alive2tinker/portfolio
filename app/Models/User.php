@@ -24,7 +24,9 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
         'name',
         'email',
         'password',
-        'meta'
+        'meta',
+        'word_cv',
+        'pdf_cv'
     ];
 
     public $translatable = ['meta->main_description'];

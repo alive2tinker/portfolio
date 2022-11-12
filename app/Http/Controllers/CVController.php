@@ -14,8 +14,17 @@ class CVController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function __invoke(Request $request, User $user)
+    public function __invoke(Request $request, User $user, $type)
     {
-        return Storage::download($user->cv);
+        try{
+            switch($type){
+                case 'word':
+                    return Storage::disk('public')->download($user->word_cv);
+                case 'pdf':
+                    return Storage::disk('public')->download($user->pdf_cv);
+            }
+        }catch(\Exception $e){
+            return redirect()->back();
+        }
     }
 }
