@@ -51,6 +51,7 @@
                             gap: '4em',
                             arrows: false,
                             pagination: true,
+                            autoplay: true,
                             direction: '{{ app()->getLocale() === "ar" ? "rtl" : "ltr"}}'
                         });
 
