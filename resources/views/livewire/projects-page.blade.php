@@ -19,7 +19,7 @@
                     <div class="flex space-x-2 space-y-2 w-auto">
                     <div class="flex-1">
                     @foreach($project->technologies as $technology)
-                        <span class="rounded-full text-sm my-2 bg-teal-100 px-4 text-teal-500 font-semibold">{{ $technology['name'] }}</span>
+                    <span class="inline-flex items-center rounded-full bg-pink-100 px-2.5 py-0.5 text-xs font-medium text-pink-800">{{ $technology['name']}}</span>
                         @endforeach
                     </div>
                     </div>
