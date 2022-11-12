@@ -15,7 +15,7 @@ class AboutPage extends Component
     public function mount()
     {
         $this->user = User::find(1);
-        $this->page = WinkPage::where('title','About Page')->first();
+        $this->page = app()->getLocale() == 'ar' ? WinkPage::where('slug','about_page_ar')->first() : WinkPage::where('slug','about_page_en')->first();
         $this->socialLinks = $this->user->settings()->where(['group' => 'social'])->get();
     }
     public function render()
