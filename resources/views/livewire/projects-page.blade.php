@@ -10,7 +10,7 @@
             @foreach($user->projects as $project)
             <div>
                     <div class="rounded-full w-16 h-16 shadow-md overflow-hidden p-4" >
-                    <img class="" src="{{ $project->icon }}" alt="">
+                    <img class="" src="{{ asset('storage' . $project->icon ) }}" alt="">
                     </div>
                     <h2 class="mt-6 text-xl font-bold text-zinc-800 dark:text-zinc-100">
                         {{ $project->title }}
