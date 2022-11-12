@@ -18,7 +18,8 @@ class Project extends Model
         'image',
         'link',
         'technologies',
-        'user_id'
+        'user_id',
+        'live'
     ];
 
     protected $casts = [
