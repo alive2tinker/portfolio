@@ -16,7 +16,7 @@
                         {{ $project->title }} @if(!$project->live) <span class="rounded-full text-sm my-2 bg-red-100 border border-red-500 px-4 text-red-500 font-semibold">{{ __('Soon') }}</span> @endif
                     </h2>
                     <p class="text-zinc-800 dark:text-zinc-400">{{ Str::limit(strip_tags($project->excerpt), 100, '...') }}</p>
-                    <div class="flex space-x-2 w-auto">
+                    <div class="flex space-x-2 space-y-2 w-auto">
                     <div class="flex-1">
                     @foreach($project->technologies as $technology)
                         <span class="rounded-full text-sm my-2 bg-teal-100 px-4 text-teal-500 font-semibold">{{ $technology['name'] }}</span>
