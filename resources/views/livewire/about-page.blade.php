@@ -14,7 +14,7 @@
         <div class="lg:pl-20">
             <ul role="list">
                @foreach ($socialLinks as $socialLink)
-               <li class="flex"><a class="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500" href="/about#"><x-social-icon :platform="$socialLink->key"/><span class="ml-4">Follow on {{ $socialLink->key}}</span></a></li>
+               <li class="flex"><a class="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500" href="{{ $socialLink->value }}"><x-social-icon :platform="$socialLink->key"/><span class="ml-4">Follow on {{ $socialLink->key}}</span></a></li>
                @endforeach
             </ul>
         </div>
