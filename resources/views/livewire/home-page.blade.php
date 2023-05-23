@@ -182,6 +182,7 @@
                         <p class="text-base text-zinc-600 dark:text-zinc-400">{{ $contact_method->value }}</p>
                     </li>
                     @endforeach
+                    <li>{{ __('views: :views', ['views' => $views ])}}</li>
                 </ul>
             </div>
         </div>
