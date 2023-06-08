@@ -7,7 +7,7 @@
         <title>{{ config('app.name', 'laravel') }}</title>
         <meta name="description" content="I am Abdulmalik Alsufayran, Software developer and amateur SCRUM Master / Product Owner" />
         <meta name="keywords" content="laravel,tailwind,alpinejs,livewire,inertiajs,flutter,html,css,javascript,ui,ux,design,scrum" />
-
+        <link rel="canonical" href="https://www.malikthefullstack.com">
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         <link href="{{ asset('js-libs/splide/dist/css/splide.min.css') }}" rel="stylesheet" />

@@ -74,7 +74,7 @@
     <div class="max-w-5xl mx-auto py-7">
         <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 px-5 py-7">
             <div class="col-span-2">
-                <h1 class="text-2xl font-bold tracking-tight text-zinc-500 py-4 dark:text-zinc-100 sm:text-3xl">{{ __('Experience')}}</h1>
+                <h2 class="text-2xl font-bold tracking-tight text-zinc-500 py-4 dark:text-zinc-100 sm:text-3xl">{{ __('Experience')}}</h2>
                 @foreach($experiences as $experience)
                 <x-experience :experience="$experience" />
                 @endforeach
@@ -173,7 +173,7 @@
     <!-- contact form -->
     <div class="grid grid-cols-1 sm:grid-cols-4 gap-4" id="contact-form">
         <div class="px-5 col-span-2">
-            <h1 class="text-2xl mt-0.5 font-bold tracking-tight text-zinc-500 dark:text-zinc-100 sm:text-3xl">{{ __('Get In Touch')}}</h1>
+            <h3 class="text-2xl mt-0.5 font-bold tracking-tight text-zinc-500 dark:text-zinc-100 sm:text-3xl">{{ __('Get In Touch')}}</h3>
             <div class="py-7">
                 <ul class="space-y-4">
                     @foreach($contact_methods as $contact_method)

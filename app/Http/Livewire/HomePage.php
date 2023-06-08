@@ -6,6 +6,7 @@ use App\Models\PageView;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Livewire\Component;
+use Spatie\Sitemap\SitemapGenerator;
 
 class HomePage extends Component
 {
@@ -24,6 +25,7 @@ class HomePage extends Component
     }
     public function render()
     {
+        SitemapGenerator::create('https://example.com')->writeToFile(public_path() . '/sitemap.xml');
         return view('livewire.home-page',[
             'views' => count(PageView::where('page','home')->get())
         ]);
