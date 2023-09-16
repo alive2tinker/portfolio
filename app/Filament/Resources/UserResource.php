@@ -6,10 +6,16 @@ use App\Filament\Resources\UserResource\Pages;
 use App\Filament\Resources\UserResource\RelationManagers;
 use App\Models\User;
 use Filament\Forms;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\KeyValue;
+use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+use Filament\Tables\Columns\Column;
+use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -23,15 +29,17 @@ class UserResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name'),
-                Forms\Components\TextInput::make('email'),
-                Forms\Components\TextInput::make('about_header.ar')->label('About Header (Arabic)')->translateLabel(),
-                Forms\Components\TextInput::make('about_header.en')->label('About Header (English)')->translateLabel(),
-                Forms\Components\RichEditor::make('about_content.ar')->label('About Content (Arabic)')->translateLabel()->columnSpan(2),
-                Forms\Components\RichEditor::make('about_content.en')->label('About Content (English)')->translateLabel()->columnSpan(2),
-                Forms\Components\TextInput::make('meta.rights.ar')->label('Rights (Arabic)')->translateLabel(),
-                Forms\Components\TextInput::make('meta.rights.en')->label('Rights (English)')->translateLabel(),
-                Forms\Components\KeyValue::make('meta')
+                TextInput::make('name'),
+                TextInput::make('email'),
+                FileUpload::make('word_cv')->acceptedFileTypes(['application/vnd.openxmlformats-officedocument.wordprocessingml.document','application/msword']),
+                FileUpload::make('pdf_cv')->acceptedFileTypes(['application/pdf']),
+                KeyValue::make('meta.main_description')->columnSpan(2),
+                KeyValue::make('meta.sub_description')->columnSpan(2),
+                KeyValue::make('meta.rights')->columnSpan(2),
+                KeyValue::make('meta.projects_header')->columnSpan(2),
+                KeyValue::make('meta.projects_subheader')->columnSpan(2),
+                KeyValue::make('meta.articles_header')->columnSpan(2),
+                KeyValue::make('meta.articles_subheader')->columnSpan(2),
             ]);
     }
 
@@ -39,9 +47,9 @@ class UserResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name'),
-                Tables\Columns\TextColumn::make('email'),
-                Tables\Columns\TextColumn::make('created_at')
+                TextColumn::make('name'),
+                TextColumn::make('email'),
+                TextColumn::make('created_at')->label('joined at')->translateLabel(),
             ])
             ->filters([
                 //
