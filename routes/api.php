@@ -17,3 +17,13 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('services', function(){
+    return response()->json([
+        [
+            "id" =>  6,
+            "name" => "Mobile App",
+            "image" => "/img/service/2.jpg"
+        ]
+    ]);
+});

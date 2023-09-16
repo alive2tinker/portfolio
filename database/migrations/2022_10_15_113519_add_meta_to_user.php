@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->json('meta');
+            $table->json('about_header');
+            $table->json('about_content');
         });
     }
 
@@ -27,6 +29,8 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('meta');
+            $table->dropColumn('about_header');
+            $table->dropColumn('about_content');
         });
     }
 };

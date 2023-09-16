@@ -24,10 +24,15 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
         'name',
         'email',
         'password',
-        'meta'
+        'meta',
+        'about_header',
+        'about_content'
     ];
 
-    public $translatable = ['meta->main_description'];
+    public $translatable = [
+        'meta->main_description',
+        'about_header',
+        'about_content'];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -46,7 +51,9 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'meta' => 'array'
+        'meta' => 'array',
+        'about_header' => "array",
+        'about_content' => "array",
     ];
 
     public function settings()

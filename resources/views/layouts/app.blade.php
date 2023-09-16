@@ -15,7 +15,7 @@
     </head>
     <body class="antialiased bg-gray-50 dark:bg-black">
     <div class="max-w-5xl mx-auto min-h-screen bg-white dark:bg-zinc-900">
-        <livewire:navigation />
+        <livewire:navigation :social_links="[]"/>
         <main>
             {{ $slot }}
         </main>

@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\MenuLink;
+use App\Models\User;
 use Livewire\Component;
 
 class Navigation extends Component
@@ -18,6 +19,8 @@ class Navigation extends Component
             ['location', 'both'],
             ['user_id', 1],
         ])->get();
+
+        $this->social_links = User::find(1)->settings()->where(['group' => 'social'])->get();
     }
     public function render()
     {

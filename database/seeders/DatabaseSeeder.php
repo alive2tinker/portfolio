@@ -19,6 +19,14 @@ class DatabaseSeeder extends Seeder
             'name' => 'Abdulmalik Alsufayran',
             'email' => 'sufayran@gmail.com',
             'password' => bcrypt('Sufayr@n2022'),
+            'about_header' => [
+                'en' => "I’m Abdulmalik Alsufayran. I live in Riyadh, where I program in the future.",
+                'ar' => "انا عبدالملك السفيران. اسكن الرياض الحبيبة، وفيها ابرمج للمستقبل"
+            ],
+            'about_content' => [
+                'en' => "I’m Abdulmalik Alsufayran. I live in Riyadh, where I program in the future.",
+                'ar' => "انا عبدالملك السفيران. اسكن الرياض الحبيبة، وفيها ابرمج للمستقبل"
+            ],
             'meta' => [
                 'main_description' => [
                     'en' => 'Software designer, founder, and amateur astronaut.',
@@ -47,7 +55,7 @@ class DatabaseSeeder extends Seeder
                 'articles_subheader' => [
                     'en' => "All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order.",
                     'ar' => ""
-                ]
+                ],
             ]
         ]);
 
