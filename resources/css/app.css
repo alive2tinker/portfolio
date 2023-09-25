@@ -24,3 +24,7 @@
         font-family: DancingScript_Bold, sans-serif;
     }
 }
+
+[x-cloak]{
+    display: none;
+}

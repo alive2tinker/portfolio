@@ -7,9 +7,12 @@
             </div>
         </div>
         <div class="grid py-7 sm:grid-cols-3 gap-4">
-            @foreach($user->projects as $project)
+            @foreach($projects as $project)
             <x-project-card :project="$project" />
             @endforeach
+        </div>
+        <div class="flex justify-center">
+            {{ $projects->links() }}
         </div>
     </div>
 </div>
