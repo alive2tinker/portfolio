@@ -22,6 +22,7 @@ class HomePage extends Component
         $this->social_links = $this->user->settings()->where(['group' => 'social'])->get();
         $this->contact_methods = $this->user->settings()->where('group', 'contact')->get();
         $this->experiences = $this->user->experiences;
+        $this->services = $this->user->services()->where('is_featured',1)->get();
     }
     public function render()
     {

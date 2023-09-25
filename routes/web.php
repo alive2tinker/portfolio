@@ -5,6 +5,7 @@ use App\Http\Livewire\AboutPage;
 use App\Http\Livewire\ArticlesPage;
 use App\Http\Livewire\ProjectCalculator;
 use App\Http\Livewire\ProjectsPage;
+use App\Http\Livewire\ServicesPage;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/projects', ProjectsPage::class)->name('projects');
     Route::get('/articles', ArticlesPage::class)->name('articles');
     Route::get('/cv', CVController::class)->name('fetchCV');
-    Route::get('/project-calculator', ProjectCalculator::class)->name('project-calculator');
     Route::get('/cv/{user}/{type}', CVController::class)->name('fetchCV');
+    Route::get('/services', ServicesPage::class)->name('services');
 });

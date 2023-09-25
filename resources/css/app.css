@@ -28,3 +28,12 @@
 [x-cloak]{
     display: none;
 }
+
+.mb{
+    background-image: radial-gradient(circle at 1px 1px,rgb(71 85 105) 1px, transparent 0);
+    background-size: 40px 40px;
+}
+.dmb{
+    background-image: radial-gradient(circle at 1px 1px, rgb(203 213 225) 1px, transparent 0);
+    background-size: 40px 40px;
+}

@@ -19,7 +19,7 @@ class ProjectsPage extends Component
     public function render()
     {
         return view('livewire.projects-page',[
-            'projects' => Project::where('user_id', $this->user->id)->orderby('created_at','desc')->paginate(10)
+            'projects' => Project::where('user_id', $this->user->id)->orderby('created_at','desc')->paginate(9)
         ]);
     }
 }

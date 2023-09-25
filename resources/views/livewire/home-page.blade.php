@@ -170,6 +170,15 @@
             </div>
         </div>
     </div>
+    <div class="flex justify-between px-2 sm:px-6">
+        <h3 class="text-2xl mt-0.5 font-bold tracking-tight text-zinc-500 dark:text-zinc-100 sm:text-3xl">{{ __('Services')}}</h3>
+        <a href="/services" class="dark:text-teal-500 text-zinc-600">{{ __('View More') }}</a>
+    </div>
+    <div class="grid grid-cols-1 mx-2 sm:mx-6 my-6 sm:grid-cols-3 gap-4">
+        @foreach($services as $service)
+            <x-service-card :service="$service"></x-service-card>
+        @endforeach
+    </div>
     <!-- contact form -->
     <div class="grid grid-cols-1 sm:grid-cols-4 gap-4" id="contact-form">
         <div class="px-5 col-span-2">
@@ -182,7 +191,7 @@
                         <p class="text-base text-zinc-600 dark:text-zinc-400">{{ $contact_method->value }}</p>
                     </li>
                     @endforeach
-                    <li>{{ __('views: :views', ['views' => $views ])}}</li>
+                    <li class="dark:text-zinc-200">{{ __('views: :views', ['views' => $views ])}}</li>
                 </ul>
             </div>
         </div>

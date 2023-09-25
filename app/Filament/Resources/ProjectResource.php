@@ -39,9 +39,9 @@ class ProjectResource extends Resource
                 TextInput::make('link')->label('Project Link')->translateLabel(),
                 Checkbox::make('live')->label('is project live?')->translateLabel(),
                 Repeater::make('technologies')
-                ->schema([
-                    TextInput::make('name')
-                ])->columnSpan(2)
+                    ->schema([
+                        TextInput::make('name')
+                    ])->columnSpan(2)
             ]);
     }
 
@@ -62,14 +62,14 @@ class ProjectResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -77,5 +77,5 @@ class ProjectResource extends Resource
             'create' => Pages\CreateProject::route('/create'),
             'edit' => Pages\EditProject::route('/{record}/edit'),
         ];
-    }    
+    }
 }

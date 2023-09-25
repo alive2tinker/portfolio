@@ -1,5 +1,5 @@
 <div>
-    <hr>
+    <hr class="border dark:border-zinc-700/40">
     <div class="max-w-7xl mx-auto sm:flex py-7 px-4 sm:justify-between">
         <div class="flex flex-1 justify-center">
             <div class="flex gap-6 text-sm font-medium text-zinc-800 dark:text-zinc-200">

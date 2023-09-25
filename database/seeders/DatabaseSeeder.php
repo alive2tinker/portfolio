@@ -48,6 +48,14 @@ class DatabaseSeeder extends Seeder
                     'en' => "",
                     'ar' => ""
                 ],
+                'services_header' => [
+                    'en' => "A glimpse of what I can offer",
+                    'ar' => "لمحة على ما اقدم"
+                ],
+                'services_subheader' => [
+                    'en' => "",
+                    'ar' => ""
+                ],
                 'articles_header' => [
                     'en' => "Writing on software design, company building, and the aerospace industry.",
                     'ar' => ""

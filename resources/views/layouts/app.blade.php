@@ -16,6 +16,9 @@
         @livewireStyles
     </head>
     <body class="antialiased bg-gray-50 dark:bg-black">
+    <div class="w-screen h-screen -z-10 absolute mb dark:dmb">
+
+    </div>
     <div class="max-w-5xl mx-auto min-h-screen bg-white dark:bg-zinc-900">
         <livewire:navigation :social_links="[]"/>
         <main>
