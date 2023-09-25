@@ -15,6 +15,7 @@ use Filament\Forms\Components\RichEditor;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Forms\Components\Checkbox;
 
 class ServiceResource extends Resource
 {
@@ -30,6 +31,7 @@ class ServiceResource extends Resource
                 TextInput::make('title.en')->label('Title in English')->translateLabel(),
                 RichEditor::make('excerpt.ar')->label('Excerpt In Arabic')->translateLabel()->columnSpan(2),
                 RichEditor::make('excerpt.en')->label('Excerpt In English')->translateLabel()->columnSpan(2),
+                Checkbox::make('is_featured')->label('featured?')->translateLabel(),
             ]);
     }
 
