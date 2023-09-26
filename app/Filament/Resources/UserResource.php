@@ -40,6 +40,8 @@ class UserResource extends Resource
                 KeyValue::make('meta.projects_subheader')->columnSpan(2),
                 KeyValue::make('meta.articles_header')->columnSpan(2),
                 KeyValue::make('meta.articles_subheader')->columnSpan(2),
+                KeyValue::make('meta.services_header')->columnSpan(2),
+                KeyValue::make('meta.services_subheader')->columnSpan(2)
             ]);
     }
 

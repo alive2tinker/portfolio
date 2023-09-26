@@ -2,7 +2,6 @@
     <div x-data="projectCard" id="number-one">
         <div class="p-4 z-50 border rounded-lg border-zinc-300 dark:text-zinc-400 dark:border-zinc-700/40"
             @click="modalOpen = !modalOpen">
-            <p class="text-base font-semibold">{{ $service->id < 10 ? "0$service->id" : $service->id }}</p>
             <h3 class="text-xl font-bold my-2">{{ Str::limit($service->title, 30, '...') }}</h3>
             <p>{{ Str::limit(strip_tags($service->excerpt), 70, '...') }}</p>
             <button type="button" class="flex mt-5">
