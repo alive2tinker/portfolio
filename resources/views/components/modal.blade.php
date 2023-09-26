@@ -10,7 +10,7 @@
                         class="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6">
                         @if ($project->image != '')
                             <img
-                                src="{{ env('APP_ENV') === 'local' ? 'https://malikthefullstack.com/storage/' . $project->image : url($project->image) }}" />
+                                src="{{ env('APP_ENV') === 'local' ? 'https://malikthefullstack.com/storage/' . $project->image : url('storage/' . $project->image) }}" />
                         @else
                             <img src="{{ asset('images/noImage.jpg') }}" />
                         @endif
