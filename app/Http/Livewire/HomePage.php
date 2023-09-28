@@ -26,7 +26,6 @@ class HomePage extends Component
     }
     public function render()
     {
-        // SitemapGenerator::create('https://malikthefullstack.com')->writeToFile(public_path() . '/sitemap.xml');
         return view('livewire.home-page',[
             'views' => count(PageView::where('page','home')->get())
         ]);
