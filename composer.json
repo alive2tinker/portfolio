@@ -17,6 +17,7 @@
         "livewire/livewire": "^2.10",
         "mcamara/laravel-localization": "^1.7",
         "opcodesio/log-viewer": "^3.6",
+        "spatie/laravel-backup": "^8.2",
         "spatie/laravel-sitemap": "^6.2",
         "spatie/laravel-translatable": "^6.0",
         "themsaid/wink": "^1.3"
