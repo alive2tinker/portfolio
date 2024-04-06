@@ -14,7 +14,7 @@ class HomePage extends Component
 
     public function mount(Request $request)
     {
-        PageView::updateOrCreate(['ip' => $request->ip()],[
+        PageView::updateOrCreate(['ip' => $request->ip()], [
             'ip' => $request->ip(),
             'page' => 'home'
         ]);
@@ -22,12 +22,10 @@ class HomePage extends Component
         $this->social_links = $this->user->settings()->where(['group' => 'social'])->get();
         $this->contact_methods = $this->user->settings()->where('group', 'contact')->get();
         $this->experiences = $this->user->experiences;
-        $this->services = $this->user->services()->where('is_featured',1)->get();
+        $this->services = $this->user->services()->where('is_featured', 1)->get();
     }
     public function render()
     {
-        return view('livewire.home-page',[
-            'views' => count(PageView::where('page','home')->get())
-        ]);
+        return view('livewire.home-page', []);
     }
 }
