@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Models\PageView;
 
 class CVController extends Controller
 {
@@ -16,6 +17,11 @@ class CVController extends Controller
      */
     public function __invoke(Request $request, User $user, $type)
     {
+        PageView::updateOrCreate(['ip' => $request->ip()],[
+            'ip' => $request->ip(),
+            'page' => 'resume_download'
+        ]);
+
         try{
             switch($type){
                 case 'word':
