@@ -37,7 +37,6 @@
     </div>
     @livewireScripts
     @vite('resources/js/app.js')
-    <script src="https://kit.fontawesome.com/e5c23f6a2a.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

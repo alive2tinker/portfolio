@@ -23,7 +23,7 @@
                     @foreach($user->projects as $project)
                     @if($project->image)
                     <li class="splide__slide max-w-xl sm:max-w-3xl mx-auto px-4">
-                        <img class="rounded-lg w-screen max-h-96" src="{{ asset('storage/' . $project->image) }}" alt="">
+                        <img class="rounded-lg w-screen max-h-96" src="{{ asset('storage/' . $project->image) }}" alt="{{ $project->title }}">
                     </li>
                     @endif
                     @endforeach
