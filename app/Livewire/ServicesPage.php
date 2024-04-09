@@ -7,6 +7,7 @@ use Livewire\Component;
 
 class ServicesPage extends Component
 {
+    public $user;
     public function mount()
     {
         $this->user = User::find(1);
