@@ -16,6 +16,6 @@ class ServicesPage extends Component
     {
         return view('livewire.services-page',[
             'services' => $this->user->services()->orderby('created_at','asc')->paginate(10)
-        ]);
+        ])->layout('layouts.app');
     }
 }
