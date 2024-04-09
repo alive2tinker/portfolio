@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use App\Models\MenuLink;
 use App\Models\User;
@@ -8,6 +8,8 @@ use Livewire\Component;
 
 class Footer extends Component
 {
+    public $user;
+    public $links;
     public function mount()
     {
         $this->links = MenuLink::where([

@@ -1,12 +1,12 @@
 <?php
 
 use App\Http\Controllers\CVController;
-use App\Http\Livewire\AboutPage;
-use App\Http\Livewire\ArticlesPage;
-use App\Http\Livewire\ProjectCalculator;
-use App\Http\Livewire\ProjectsPage;
-use App\Http\Livewire\ServicesPage;
+use App\Livewire\AboutPage;
+use App\Livewire\ArticlesPage;
+use App\Livewire\ProjectsPage;
+use App\Livewire\ServicesPage;
 use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 {
     /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
-    Route::get('/', \App\Http\Livewire\HomePage::class)->name('home-page');
+    Route::get('/', \App\Livewire\HomePage::class)->name('home-page');
     Route::get('/about', AboutPage::class)->name('about');
     Route::get('/projects', ProjectsPage::class)->name('projects');
     Route::get('/articles', ArticlesPage::class)->name('articles');

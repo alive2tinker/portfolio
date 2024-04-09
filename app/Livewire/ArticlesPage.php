@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
+use App\Models\User;
 use Livewire\Component;
 use Wink\WinkPost;
-use App\Models\User;
 
 class ArticlesPage extends Component
 {
