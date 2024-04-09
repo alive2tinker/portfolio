@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\PageView;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Livewire\Component;
