@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use App\Models\Project;
-use Livewire\Component;
 use App\Models\User;
+use Livewire\Component;
 use Livewire\WithPagination;
 
 class ProjectsPage extends Component
 {
     use WithPagination;
-    
+
     public $user;
     public function mount()
     {
@@ -20,6 +20,6 @@ class ProjectsPage extends Component
     {
         return view('livewire.projects-page',[
             'projects' => Project::where('user_id', $this->user->id)->orderby('created_at','desc')->paginate(9)
-        ]);
+        ])->layout('layouts.app');
     }
 }

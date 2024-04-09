@@ -26,6 +26,11 @@ class Experience extends Model
         'user_id'
     ];
 
+    protected $casts = [
+        'start_date' => 'date',
+        'end_date' => 'date'
+    ];
+
     protected $dates = ['start_date',
         'end_date'];
 

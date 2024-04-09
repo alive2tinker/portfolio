@@ -1,17 +1,19 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use App\Models\PageView;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Livewire\Component;
-use Spatie\Sitemap\SitemapGenerator;
 
 class HomePage extends Component
 {
     public $user;
-
+    public $social_links;
+    public $contact_methods;
+    public $experiences;
+    public $services;
     public function mount(Request $request)
     {
         PageView::updateOrCreate(['ip' => $request->ip()],[
@@ -28,6 +30,6 @@ class HomePage extends Component
     {
         return view('livewire.home-page',[
             'views' => count(PageView::where('page','home')->get())
-        ]);
+        ])->layout('layouts.app');
     }
 }
