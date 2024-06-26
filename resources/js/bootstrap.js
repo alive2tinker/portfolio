@@ -12,19 +12,19 @@ window.axios = axios;
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
-import Alpine from 'alpinejs'
+// import Alpine from 'alpinejs'
 
-window.Alpine = Alpine
+// window.Alpine = Alpine
 
-import persist from '@alpinejs/persist'
+// import persist from '@alpinejs/persist'
 
-Alpine.plugin(persist)
+// Alpine.plugin(persist)
 
-Alpine.start();
+// Alpine.start();
 
-// import Splide from '@splidejs/splide'
+import Splide from '@splidejs/splide'
 
-// window.Splide = Splide;
+window.Splide = Splide;
 
 
 /**
