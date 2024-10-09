@@ -1,6 +1,9 @@
 import _ from 'lodash';
 window._ = _;
 
+
+
+
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the
@@ -27,6 +30,11 @@ import Splide from '@splidejs/splide'
 window.Splide = Splide;
 
 
+
+import 'leaflet/dist/leaflet.css'; // Import Leaflet's CSS
+import L from 'leaflet'; // Import Leaflet JS
+
+window.leaflet = L; // Make Leaflet globally accessible if needed
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting

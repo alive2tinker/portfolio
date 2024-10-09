@@ -20,7 +20,8 @@
     <link rel="mask-icon" href="{{ asset('favicon/safari-pinned-tab.svg') }}" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    @vite('resources/css/app.css')
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    @vite(['resources/css/app.css','resources/js/app.js'])
     @livewireStyles
 </head>
 
@@ -36,7 +37,6 @@
         <livewire:footer />
     </div>
     @livewireScripts
-    @vite('resources/js/app.js')
 </body>
 
 </html>
