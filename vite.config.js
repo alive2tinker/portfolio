@@ -8,4 +8,11 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    build: {
+        rollupOptions: {
+          external: [
+            'leaflet/dist/leaflet.css',
+          ],
+        },
+      },
 });
