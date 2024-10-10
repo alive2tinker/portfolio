@@ -30,11 +30,6 @@ import Splide from '@splidejs/splide'
 window.Splide = Splide;
 
 
-
-import 'leaflet/dist/leaflet.css'; // Import Leaflet's CSS
-import L from 'leaflet'; // Import Leaflet JS
-
-window.leaflet = L; // Make Leaflet globally accessible if needed
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
