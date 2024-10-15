@@ -23,5 +23,13 @@
     "Saudi Riyal":"ريال سعودي",
     "Read More":"المزيد",
     "View More":"عرض المزيد",
-    "Services":"الخدمات"
+    "Services":"الخدمات",
+    "First Name":"الاسم الاول",
+"Last Name":"الاسم الاخير",
+"Email":"البريد الالكتروني",
+"Phone":"الهاتف",
+"Message":"الرسالة",
+"Send":"ارسال",
+"Message Received":"تم استلام الرسالة",
+"We'll get in touch with you soon":"سيتم التواصل بكم قريبا"
 }

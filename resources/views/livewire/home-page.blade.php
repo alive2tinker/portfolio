@@ -295,14 +295,8 @@
             @endif
         </div>
         <div>
-            <div id="map" style="width:100%; height:500px;"></div>
-            <script>
-                const leaflet = window.L;
-                const map = window.L.map('map', {
-                    center: leaflet.latLng(49.2125578, 16.62662018),
-                    zoom: 14,
-                });
-            </script>
+            <h3 class="text-2xl mt-0.5 font-bold tracking-tight text-zinc-500 dark:text-zinc-100 sm:text-3xl">
+                {{ __('Where have I been') }}</h3>
         </div>
     </div>
 </div>
