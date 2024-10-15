@@ -18,11 +18,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
 Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 {
     /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
-    Route::get(uri: '/', \App\Livewire\HomePage::class)->name('home-page');
+    Route::get('/', \App\Livewire\HomePage::class)->name('home-page');
     Route::get('/about', AboutPage::class)->name('about');
     Route::get('/projects', ProjectsPage::class)->name('projects');
     Route::get('/articles', ArticlesPage::class)->name('articles');
