@@ -263,7 +263,7 @@
 
                 <div>
                     <label for="comment"
-                        class="block text-sm font-medium leading-6 text-gray-900">{{ __('Details') }}</label>
+                        class="block text-sm font-medium leading-6 text-gray-900">{{ __('Message') }}</label>
                     <div class="mt-2">
                         <textarea rows="4" name="details" wire:model="message" id="comment"
                             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-500 sm:text-sm sm:leading-6"></textarea>
@@ -295,7 +295,14 @@
             @endif
         </div>
         <div>
-            <x-maps-leaflet :markers="[['lat' => 52.16444513293423, 'long' => 5.985622388024091]]"></x-maps-leaflet>
+            <div id="map" style="width:100%; height:500px;"></div>
+            <script>
+                const leaflet = window.L;
+                const map = window.L.map('map', {
+                    center: leaflet.latLng(49.2125578, 16.62662018),
+                    zoom: 14,
+                });
+            </script>
         </div>
     </div>
 </div>

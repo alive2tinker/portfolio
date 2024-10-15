@@ -1,13 +1,44 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="{{ app()->getLocale() === 'ar' ? "rtl" : "ltr" }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Google Tag manager -->
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PWSJD7M8');
+    </script>
+    <!-- End Google Tag Manager -->
+
     <title>{{ config('app.name', 'laravel') }}</title>
-    <meta name="description" content="I am Abdulmalik Alsufayran, Software developer and amateur SCRUM Master / Product Owner" />
-    <meta name="keywords" content="{{ App\Models\Setting::where('key','seo_keywords')->first()->value ?? ''}}" />
+    <meta property="og:title" content="{{ config('app.name', 'laravel') }}">
+    <meta property="og:description"
+        content="I am Abdulmalik Alsufayran, Software developer and amateur SCRUM Master / Product Owner">
+    <meta property="og:image" content="https://malikthefullstack.com/og-image.png">
+    <meta property="og:url" content="https://malikthefullstack.com">
+    <meta name="description"
+        content="I am Abdulmalik Alsufayran, Software developer and amateur SCRUM Master / Product Owner" />
+    <meta name="twitter:title" content="{{ config('app.name', 'laravel') }}">
+    <meta name="twitter:description"
+        content="I am Abdulmalik Alsufayran, Software developer and amateur SCRUM Master / Product Owner">
+    <meta name="twitter:url" content="https://malikthefullstack.com/twitter-image.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="keywords" content="{{ App\Models\Setting::where('key', 'seo_keywords')->first()->value ?? '' }}" />
     <link rel="canonical" href="https://www.malikthefullstack.com">
     <!-- Fonts -->
     <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -20,9 +51,10 @@
     <link rel="mask-icon" href="{{ asset('favicon/safari-pinned-tab.svg') }}" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    @vite(['resources/css/app.css','resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 </head>
 
 <body class="antialiased bg-gray-50 dark:bg-black">
@@ -37,6 +69,13 @@
         <livewire:footer />
     </div>
     @livewireScripts
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <!-- Google Tag manager -->
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWSJD7M8"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 </body>
 
 </html>
