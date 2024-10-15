@@ -2,10 +2,6 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Google Tag manager -->
     <!-- Google Tag Manager -->
     <script>
         (function(w, d, s, l, i) {
@@ -24,6 +20,9 @@
         })(window, document, 'script', 'dataLayer', 'GTM-PWSJD7M8');
     </script>
     <!-- End Google Tag Manager -->
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>{{ config('app.name', 'laravel') }}</title>
     <meta property="og:title" content="{{ config('app.name', 'laravel') }}">
