@@ -13,7 +13,7 @@ class HomePage extends Component
     public $user;
     public $social_links;
     public $contact_methods;
-    public $experiences;
+//    public $experiences;
     public $services;
 
     // form input
@@ -31,10 +31,10 @@ class HomePage extends Component
             'ip' => $request->ip(),
             'page' => 'home'
         ]);
-        $this->user = User::find(1);
+        $this->user = User::with('experiences')->find(1);
         $this->social_links = $this->user->settings()->where(['group' => 'social'])->get();
         $this->contact_methods = $this->user->settings()->where('group', 'contact')->get();
-        $this->experiences = $this->user->experiences;
+//        $this->experiences = $this->user->experiences;
         $this->services = $this->user->services()->where('is_featured',1)->get();
     }
 

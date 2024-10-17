@@ -25,15 +25,15 @@ class MenuLinkSeeder extends Seeder
             'user_id' => 1
         ]);
 
-        MenuLink::create([
-            'name' => [
-                'en' => 'Articles',
-                'ar' => 'مقالات'
-            ],
-            'link' => '/articles',
-            'location' => 'both',
-            'user_id' => 1
-        ]);
+        // MenuLink::create([
+        //     'name' => [
+        //         'en' => 'Articles',
+        //         'ar' => 'مقالات'
+        //     ],
+        //     'link' => '/articles',
+        //     'location' => 'both',
+        //     'user_id' => 1
+        // ]);
 
         MenuLink::create([
             'name' => [
@@ -47,6 +47,15 @@ class MenuLinkSeeder extends Seeder
 
         MenuLink::create([
             'name' => [
+                'en' => "Services",
+                'ar' => "الخدمات",
+                'link' => "/services",
+                'user_id' => 1
+            ]
+            ]);
+
+        MenuLink::create([
+            'name' => [
                 'en' => 'More',
                 'ar' => 'المزيد'
             ],
@@ -54,14 +63,14 @@ class MenuLinkSeeder extends Seeder
             'user_id' => 1
         ]);
 
-        MenuLink::create([
-            'name' => [
-                'en' => 'Contact',
-                'ar' => 'اتصل بنا'
-            ],
-            'link' => '/contact',
-            'menu_link_id' => 4,
-            'user_id' => 1
-        ]);
+        // MenuLink::create([
+        //     'name' => [
+        //         'en' => 'Contact',
+        //         'ar' => 'اتصل بنا'
+        //     ],
+        //     'link' => '/contact',
+        //     'menu_link_id' => 4,
+        //     'user_id' => 1
+        // ]);
     }
 }
