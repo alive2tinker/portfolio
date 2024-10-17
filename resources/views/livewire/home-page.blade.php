@@ -194,7 +194,7 @@
         <a href="/services" class="dark:text-teal-500 text-zinc-600">{{ __('View More') }}</a>
     </div>
     <div class="grid grid-cols-1 mx-2 sm:mx-6 my-6 sm:grid-cols-3 gap-4">
-        @foreach ($services as $service)
+        @foreach ($user->services as $service)
             <x-service-card :service="$service"></x-service-card>
         @endforeach
     </div>

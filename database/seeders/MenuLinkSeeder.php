@@ -48,11 +48,11 @@ class MenuLinkSeeder extends Seeder
         MenuLink::create([
             'name' => [
                 'en' => "Services",
-                'ar' => "الخدمات",
-                'link' => "/services",
-                'user_id' => 1
-            ]
-            ]);
+                'ar' => "الخدمات"
+            ],
+            'link' => "/services",
+            'user_id' => 1
+        ]);
 
         MenuLink::create([
             'name' => [
