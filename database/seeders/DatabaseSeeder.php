@@ -67,6 +67,8 @@ class DatabaseSeeder extends Seeder
             ]
         ]);
 
+
+
         $this->call(MenuLinkSeeder::class);
         $this->call(SettingSeeder::class);
         $this->call(ExperienceSeeder::class);

@@ -22,7 +22,7 @@ class Navigation extends Component
             ['user_id', 1],
         ])->get();
 
-        $this->social_links = User::find(1)->settings()->where(['group' => 'social'])->get();
+//        $this->social_links = User::find(1)->settings()->where(['group' => 'social'])->get();
     }
     public function render()
     {

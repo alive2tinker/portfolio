@@ -29,22 +29,24 @@
     <meta name="twitter:url" content="https://malikthefullstack.com/twitter-image.png">
     <meta name="twitter:card" content="summary">
     <meta name="keywords" content="{{ App\Models\Setting::where('key', 'seo_keywords')->first()->value ?? '' }}" />
-    <link rel="canonical" href="https://www.malikthefullstack.com">
+    <link rel="canonical" href="https://malikthefullstack.com">
     <!-- Fonts -->
     <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="{{ asset('js-libs/splide/dist/css/splide.min.css') }}" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/js/splide.min.js"></script>
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('favicon/apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon/favicon-16x16.png') }}">
-    <link rel="manifest" href="{{ asset('favicon/site.webmanifest') }}">
-    <link rel="mask-icon" href="{{ asset('favicon/safari-pinned-tab.svg') }}" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="{{ asset("favicon/favicon-48x48.png") }}" sizes="48x48" />
+    <link rel="icon" type="image/svg+xml" href="{{ asset("favicon/favicon.svg") }}" />
+    <link rel="shortcut icon" href="{{ asset('favicon/favicon.ico') }}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Malikthefullstack" />
+    <link rel="manifest" href="{{ asset('favicon/site.webmanifest') }}" />
+    <!-- END FAVICON -->
 </head>
 
 <body class="antialiased bg-gray-50 dark:bg-black">
