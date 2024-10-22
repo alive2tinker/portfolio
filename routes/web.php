@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CVController;
+use App\Livewire\HomePage;
 use App\Livewire\AboutPage;
 use App\Livewire\ArticlesPage;
 use App\Livewire\ProjectsPage;
@@ -18,14 +19,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function(){
-//     return view('welcome');
-// });
+
 
 Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 {
     /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
-    Route::get(uri: '/', \App\Livewire\HomePage::class)->name('home-page');
+    Route::get(uri: '/', action: HomePage::class)->name('home-page');
     Route::get('/about', AboutPage::class)->name('about');
     Route::get('/projects', ProjectsPage::class)->name('projects');
     Route::get('/articles', ArticlesPage::class)->name('articles');
