@@ -18,14 +18,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function(){
-    return view('welcome');
-});
+// Route::get('/', function(){
+//     return view('welcome');
+// });
 
 Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 {
     /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
-    Route::get('/welcome', \App\Livewire\HomePage::class)->name('home-page');
+    Route::get(uri: '/', \App\Livewire\HomePage::class)->name('home-page');
     Route::get('/about', AboutPage::class)->name('about');
     Route::get('/projects', ProjectsPage::class)->name('projects');
     Route::get('/articles', ArticlesPage::class)->name('articles');
