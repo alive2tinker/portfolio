@@ -37,12 +37,19 @@
     <meta name="apple-mobile-web-app-title" content="Malikthefullstack" />
     <link rel="manifest" href="{{ asset('favicon/site.webmanifest') }}" />
     <!-- END FAVICON -->
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YD437HKY8L"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YD437HKY8L');
+</script>
 </head>
 
 <body class="antialiased bg-gray-50 dark:bg-black">
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWSJD7M8"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <div class="w-screen h-screen -z-10 absolute mb dark:dmb">
 
@@ -54,15 +61,6 @@
         </main>
         <livewire:footer />
     </div>
-        <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YD437HKY8L"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-YD437HKY8L');
-</script>
     @livewireScripts
 </body>
 
