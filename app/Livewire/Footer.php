@@ -10,7 +10,7 @@ use Livewire\Component;
 
 class Footer extends Component
 {
-    public $user;
+    public $rights;
     public $links;
     public function mount()
     {
@@ -26,7 +26,9 @@ class Footer extends Component
             ])->get();
         });
 
-        $this->user = User::find(1);
+        $this->rights = Cache::remember('user-rights', Carbon::now()->addMonth(), function (){
+            return User::find(1)->meta['rights'];
+        });
     }
     public function render()
     {

@@ -29,10 +29,6 @@ class HomePage extends Component
     public $receivedContactRequest = false;
     public function mount(Request $request)
     {
-        PageView::updateOrCreate(['ip' => $request->ip()],[
-            'ip' => $request->ip(),
-            'page' => 'home'
-        ]);
         $this->user = Cache::remember('user-profile', Carbon::now()->addWeek(), function(){
             return User::with(['tools','projects','skills','experiences','services' => function($q) {
                 $q->where('is_featured',1);

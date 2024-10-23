@@ -9,7 +9,7 @@
             </div>
         </div>
         <div class="flex flex-1 justify-center">
-            <p class="text-sm text-zinc-400 dark:text-zinc-500">© <!-- -->{{ date('Y') }}<!-- --> {{ $user->meta['rights'][app()->getLocale()] }}</p>
+            <p class="text-sm text-zinc-400 dark:text-zinc-500">© <!-- -->{{ date('Y') }}<!-- --> {{ $rights[app()->getLocale()] }}</p>
         </div>
     </div>
 </div>
