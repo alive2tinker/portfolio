@@ -116,7 +116,7 @@
             @foreach($user->hardware() as $hardware)
                 <div class="text-center">
                     <div class="flex justify-center">
-                        <img class="w-12 aspect-square rounded-full" src="{{ $hardware->logo }}" alt="{{ $hardware->name }}">
+                        <img class="w-12 aspect-square rounded-full" src="{{ asset($hardware->logo) }}" alt="{{ $hardware->name }}">
                     </div>
                     <p class="dark:text-zinc-300">{{ $hardware->name }}</p>
                 </div>
