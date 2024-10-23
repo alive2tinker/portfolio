@@ -93,4 +93,19 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
     {
         return $this->hasMany(Service::class);
     }
+
+    public function tools()
+    {
+        return $this->hasMany(Tool::class);
+    }
+
+    public function hardware()
+    {
+        return $this->tools->where('type','hardware');
+    }
+
+    public function software()
+    {
+        return $this->tools->where('type','software');
+    }
 }

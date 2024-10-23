@@ -5,7 +5,9 @@ namespace App\Livewire;
 use App\Models\Contact;
 use App\Models\PageView;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Livewire\Component;
 
 class HomePage extends Component
@@ -31,11 +33,17 @@ class HomePage extends Component
             'ip' => $request->ip(),
             'page' => 'home'
         ]);
-        $this->user = User::with(['projects','skills','experiences','services' => function($q) {
-            $q->where('is_featured',1);
-        }])->find(1);
-        $this->social_links = $this->user->settings()->where(['group' => 'social'])->get();
-        $this->contact_methods = $this->user->settings()->where('group', 'contact')->get();
+        $this->user = Cache::remember('user-profile', Carbon::now()->addWeek(), function(){
+            return User::with(['tools','projects','skills','experiences','services' => function($q) {
+                $q->where('is_featured',1);
+            }])->find(1);
+        });
+        $this->social_links = Cache::remember('settings-social', Carbon::now()->addWeek(), function (){
+            return $this->user->settings()->where(['group' => 'social'])->get();
+        });
+        $this->contact_methods = Cache::remember('settings-contact', Carbon::now()->addWeek(), function (){
+            return $this->user->settings()->where('group', 'contact')->get();
+        });
     }
 
     protected $rules = [

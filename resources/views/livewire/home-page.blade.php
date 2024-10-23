@@ -17,64 +17,6 @@
             @endforeach
         </ul>
     </div>
-    <!-- projects carousel -->
-    <div class="py-5" x-data="projectsCarousel" x-cloak>
-        <div id="image-carousel" class="splide" aria-label="Beautiful Images" id="projects-carousel">
-            <div class="splide__track">
-                <ul class="splide__list">
-                    @foreach ($user->projects as $project)
-                        @if ($project->image)
-                            <li class="splide__slide max-w-xl sm:max-w-3xl mx-auto px-4">
-                                <img class="rounded-lg w-screen max-h-96"
-                                     src="{{ asset('storage/' . $project->image) }}" alt="project title...">
-                            </li>
-                        @endif
-                    @endforeach
-                </ul>
-            </div>
-            <div class="flex justify-center py-4">
-                <div class="flex space-x-3">
-                    <template x-cloak x-for="(page, index) in pages" :key="index">
-                        <button :id="`pagination-${currentIndex}`"
-                                :class="{ 'w-2 bg-zinc-800 h-2 rounded': true, 'w-11': isCurrent(index) }">
-
-                        </button>
-                    </template>
-                </div>
-            </div>
-        </div>
-        <script>
-            function projectsCarousel() {
-                return {
-                    currentIndex: 0,
-                    projectsCarousel: null,
-                    pages: 0,
-                    init() {
-                        this.projectsCarousel = new Splide('.splide', {
-                            perPage: 1,
-                            gap: '4em',
-                            arrows: false,
-                            pagination: true,
-                            autoplay: true,
-                            direction: '{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}'
-                        });
-
-                        this.projectsCarousel.on('pagination:mounted', (data) => {
-                            data.list.classList.add('hidden');
-                        });
-                        this.projectsCarousel.on('pagination:updated', (data, prev, curr) => {
-                            this.currentIndex = curr.page;
-                        });
-                        this.projectsCarousel.mount();
-                        this.pages = this.projectsCarousel.Components.Elements.slides.length
-                    },
-                    isCurrent(i) {
-                        return this.currentIndex === i;
-                    }
-                }
-            }
-        </script>
-    </div>
     <div class="max-w-5xl mx-auto py-7">
         <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 px-5 py-7">
             <div class="col-span-2">
@@ -120,31 +62,11 @@
                                 class="inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none bg-zinc-50 font-medium text-zinc-900 hover:bg-zinc-100 active:bg-zinc-100 active:text-zinc-900/60 dark:bg-zinc-800/50 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 dark:active:bg-zinc-800/50 dark:active:text-zinc-50/70 group mt-6 w-full">{{ __('Download CV') }}</button>
                         <div class="relative z-10" style="z-index:9999 !important;" x-cloak x-show="modalOpen"
                              aria-labelledby="modal-title" role="dialog" aria-modal="true">
-                            <!--
-    Background backdrop, show/hide based on modal state.
-
-    Entering: "ease-out duration-300"
-      From: "opacity-0"
-      To: "opacity-100"
-    Leaving: "ease-in duration-200"
-      From: "opacity-100"
-      To: "opacity-0"
-  -->
                             <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
 
                             <div class="fixed inset-0 z-50 overflow-y-auto" style="z-index:9999 !important;">
                                 <div
                                     class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-                                    <!--
-        Modal panel, show/hide based on modal state.
-
-        Entering: "ease-out duration-300"
-          From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-          To: "opacity-100 translate-y-0 sm:scale-100"
-        Leaving: "ease-in duration-200"
-          From: "opacity-100 translate-y-0 sm:scale-100"
-          To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-      -->
                                     <div
                                         class="relative transform z-50 overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6">
                                         <div>
@@ -187,16 +109,32 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="flex justify-between px-2 sm:px-6">
-        <h3 class="text-2xl mt-0.5 font-bold tracking-tight text-zinc-500 dark:text-zinc-100 sm:text-3xl">
-            {{ __('Services') }}</h3>
-        <a href="/services" class="dark:text-teal-500 text-zinc-600">{{ __('View More') }}</a>
-    </div>
-    <div class="grid grid-cols-1 mx-2 sm:mx-6 my-6 sm:grid-cols-3 gap-4">
-        @foreach ($user->services as $service)
-            <x-service-card :service="$service"></x-service-card>
-        @endforeach
+        <!-- hardware section -->
+        <h2 class="text-2xl font-bold tracking-tight text-zinc-500 py-4 dark:text-zinc-100 sm:text-3xl mx-4 py-4">
+            {{ __('Hardware') }}</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 my-4">
+            @foreach($user->hardware() as $hardware)
+                <div class="text-center">
+                    <div class="flex justify-center">
+                        <img class="w-12 aspect-square rounded-full" src="{{ $hardware->logo }}" alt="{{ $hardware->name }}">
+                    </div>
+                    <p class="dark:text-zinc-300">{{ $hardware->name }}</p>
+                </div>
+            @endforeach
+        </div>
+        <!-- software section -->
+        <h2 class="text-2xl font-bold tracking-tight text-zinc-500 py-4 dark:text-zinc-100 sm:text-3xl mx-4 py-4">
+            {{ __('Software') }}</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 my-4">
+            @foreach($user->software() as $software)
+                <div class="text-center">
+                    <div class="flex justify-center">
+                        <img class="w-12 aspect-square rounded-full" src="{{ $software->logo }}" alt="{{ $software->name }}">
+                    </div>
+                    <p class="dark:text-zinc-300">{{ $software->name }}</p>
+                </div>
+            @endforeach
+        </div>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div class="px-6">
@@ -206,7 +144,7 @@
 
                 <div>
                     <label for="first_name"
-                           class="block text-sm font-medium leading-6 text-gray-900">{{ __('First Name') }}</label>
+                           class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-100">{{ __('First Name') }}</label>
                     <div class="mt-2">
                         <input type="text" name="first_name" id="first_name" wire:model="first_name"
                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-500 sm:text-sm sm:leading-6">
@@ -215,7 +153,7 @@
 
                 <div>
                     <label for="last_name"
-                           class="block text-sm font-medium leading-6 text-gray-900">{{ __('Last Name') }}</label>
+                           class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-100">{{ __('Last Name') }}</label>
                     <div class="mt-2">
                         <input type="text" name="last_name" id="last_name" wire:model="last_name"
                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-500 sm:text-sm sm:leading-6">
@@ -224,7 +162,7 @@
 
                 <div>
                     <label for="email"
-                           class="block text-sm font-medium leading-6 text-gray-900">{{ __('Email') }}</label>
+                           class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-100">{{ __('Email') }}</label>
                     <div class="mt-2">
                         <input type="email" name="email" id="email" wire:model="email"
                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-500 sm:text-sm sm:leading-6">
@@ -233,7 +171,7 @@
 
                 <div>
                     <label for="phone"
-                           class="block text-sm font-medium leading-6 text-gray-900">{{ __('Phone') }}</label>
+                           class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-100">{{ __('Phone') }}</label>
                     <div class="mt-2">
                         <input type="text" name="phone" id="p" wire:model="phone"
                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-500 sm:text-sm sm:leading-6">
@@ -243,7 +181,7 @@
 
                 <div>
                     <label for="comment"
-                           class="block text-sm font-medium leading-6 text-gray-900">{{ __('Message') }}</label>
+                           class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-100">{{ __('Message') }}</label>
                     <div class="mt-2">
                         <textarea rows="4" name="details" wire:model="message" id="comment"
                                   class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-teal-500 sm:text-sm sm:leading-6"></textarea>
@@ -275,7 +213,9 @@
             @endif
         </div>
         <div>
-
+            <h3 class="text-2xl mt-0.5 font-bold tracking-tight text-zinc-500 dark:text-zinc-100 sm:text-3xl">
+                {{ __('Map') }}</h3>
+            <x-map />
         </div>
     </div>
 </div>

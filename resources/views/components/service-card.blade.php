@@ -4,7 +4,7 @@
             @click="modalOpen = !modalOpen">
             <h3 class="text-xl font-bold my-2">{{ Str::limit($service->title, 30, '...') }}</h3>
             <p>{{ Str::limit(strip_tags($service->excerpt), 70, '...') }}</p>
-            <button type="button" class="flex mt-5">
+            <button type="button" class="flex mt-5 text-teal-500">
                 <p>{{ __('Read More') }} </p>
                 <svg class="rtl:hidden" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
