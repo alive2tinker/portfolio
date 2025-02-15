@@ -29,7 +29,8 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
         'about_content',
         'meta',
         'word_cv',
-        'pdf_cv'
+        'pdf_cv',
+        'files'
     ];
 
     public $translatable = [
@@ -57,6 +58,7 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
         'meta' => 'array',
         'about_header' => "array",
         'about_content' => "array",
+        'files' => 'array'
     ];
 
     public function settings()

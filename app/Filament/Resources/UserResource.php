@@ -33,6 +33,7 @@ class UserResource extends Resource
                 TextInput::make('email'),
                 FileUpload::make('word_cv')->acceptedFileTypes(['application/vnd.openxmlformats-officedocument.wordprocessingml.document','application/msword']),
                 FileUpload::make('pdf_cv')->acceptedFileTypes(['application/pdf']),
+                FileUpload::make('files')->multiple(),
                 KeyValue::make('meta.main_description')->columnSpan(2),
                 KeyValue::make('meta.sub_description')->columnSpan(2),
                 KeyValue::make('meta.rights')->columnSpan(2),
