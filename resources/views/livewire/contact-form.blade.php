@@ -11,7 +11,7 @@
             <div>
                 <div class="mt-1">
                     <input type="email" wire:model="email" id="email"
-                           class="dark:bg-zinc-700 dark:text-white dark:border-teal-600 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                           class="dark:bg-zinc-700 bg-teal-700 dark:text-white dark:border-teal-600 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                            placeholder="{{ __('Your Email') }}">
                 </div>
             </div>

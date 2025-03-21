@@ -7,8 +7,18 @@
     display: none;
 }
 
-
 @layer base {
+    #cursor {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: rgba(0, 128, 128, 0.3);
+        border: 1px solid teal;
+        pointer-events: none;
+        transition: transform 0.2s ease; /* Smooth transition */
+      }     
+    
     @font-face {
         font-family: 'DancingScript_Bold';
         src: url("../../public/fonts/Dancing_Script/static/DancingScript-Bold.ttf");

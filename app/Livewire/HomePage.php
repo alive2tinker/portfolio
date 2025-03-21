@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Livewire\Component;
+use Masmerise\Toaster\Toaster;
 
 class HomePage extends Component
 {
@@ -25,7 +26,6 @@ class HomePage extends Component
     public $email;
     public $phone;
     public $message;
-
     public $receivedContactRequest = false;
     public function mount(Request $request)
     {
@@ -70,7 +70,12 @@ class HomePage extends Component
                 'message' => $this->message
             ]);
 
-            $this->receivedContactRequest = true;
+            Toaster::success('Your Inquiry has been received. We will get back to you soon.');
+            $this->reset(['first_name','last_name','email','phone','message']); 
+
+            // $this->receivedContactRequest = true;
+        }else{
+            Toaster::error('Please fill in all the required fields');
         }
     }
     public function render()

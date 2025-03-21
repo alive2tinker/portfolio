@@ -46,6 +46,7 @@
 </head>
 
 <body class="antialiased bg-gray-50 dark:bg-black">
+    <div id="cursor"></div>
     <!-- End Google Tag Manager (noscript) -->
     <div class="w-screen h-screen -z-10 absolute mb dark:dmb">
 
@@ -57,6 +58,7 @@
         </main>
         <livewire:footer />
     </div>
+    <x-toaster-hub /> <!-- 👈 -->
     @livewireScripts
 </body>
 
