@@ -46,7 +46,7 @@
 </head>
 
 <body class="antialiased bg-gray-50 dark:bg-black">
-    <div id="cursor"></div>
+    <div id="cursor" class="hidden sm-block"></div>
     <!-- End Google Tag Manager (noscript) -->
     <div class="w-screen h-screen -z-10 absolute mb dark:dmb">
 
