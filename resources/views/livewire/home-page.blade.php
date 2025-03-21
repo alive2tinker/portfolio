@@ -129,7 +129,7 @@
             @foreach($user->software() as $software)
                 <div class="text-center">
                     <div class="flex justify-center">
-                        <img class="w-12 aspect-square rounded-full" src="{{ $software->logo }}" alt="{{ $software->name }}">
+                        <img class="w-12 aspect-square rounded-full" src="storage/{{ $software->logo }}" alt="{{ $software->name }}">
                     </div>
                     <p class="dark:text-zinc-300">{{ $software->name }}</p>
                 </div>
