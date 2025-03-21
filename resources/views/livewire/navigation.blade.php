@@ -1,4 +1,4 @@
-<div>
+<div x-cloak>
     <div class="flex py-4" x-data="mobileMenu">
         <div class="flex-1 px-4 pt-1">
             <a href="{{ route('home-page') }}" class="logo text-2xl dark:text-zinc-500">malikthefullstack.com</a>
@@ -8,7 +8,7 @@
                 <ul class="flex justify-around">
                     @foreach ($links as $link)
                     @if(str_contains(Route::currentRouteName(), strtolower($link->getTranslation('name','en'))))
-                    <li class="text-sm font-bold text-teal-600"><a href="{{ route(strtolower($link->getTranslation('name','en'))) }}"> {{ $link->name }} </a></li>
+                    <li class="text-sm font-bold text-teal-600 nav-link"><a href="{{ route(strtolower($link->getTranslation('name','en'))) }}"> {{ $link->name }} </a></li>
                     @else
                     <li class="text-sm text-zinc dark:text-zinc-100 hover:text-teal-600"><a href="{{ $link->link }}">
                             {{ $link->name }} </a></li>
