@@ -110,7 +110,7 @@
             </div>
         </div>
         <!-- hardware section -->
-        <h2 class="text-2xl font-bold tracking-tight text-zinc-500 py-4 dark:text-zinc-100 sm:text-3xl mx-4 py-4">
+        {{-- <h2 class="text-2xl font-bold tracking-tight text-zinc-500 py-4 dark:text-zinc-100 sm:text-3xl mx-4 py-4">
             {{ __('Hardware') }}</h2>
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 my-4">
             @foreach($user->hardware() as $hardware)
@@ -121,7 +121,7 @@
                     <p class="dark:text-zinc-300">{{ $hardware->name }}</p>
                 </div>
             @endforeach
-        </div>
+        </div> --}}
         <!-- software section -->
         <h2 class="text-2xl font-bold tracking-tight text-zinc-500 py-4 dark:text-zinc-100 sm:text-3xl mx-4 py-4">
             {{ __('Software') }}</h2>
