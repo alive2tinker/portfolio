@@ -29,17 +29,27 @@ class HomePage extends Component
     public $receivedContactRequest = false;
     public function mount(Request $request)
     {
-        $this->user = Cache::remember('user-profile', Carbon::now()->addWeek(), function(){
-            return User::with(['tools','projects','skills','experiences','services' => function($q) {
+        if(env('TESTING_UI')){
+            $this->user = User::with(['tools','projects','skills','experiences','services' => function($q) {
                 $q->where('is_featured',1);
             }])->find(1);
-        });
-        $this->social_links = Cache::remember('settings-social', Carbon::now()->addWeek(), function (){
-            return $this->user->settings()->where(['group' => 'social'])->get();
-        });
-        $this->contact_methods = Cache::remember('settings-contact', Carbon::now()->addWeek(), function (){
-            return $this->user->settings()->where('group', 'contact')->get();
-        });
+
+            $this->social_links = $this->user->settings()->where(['group' => 'social'])->get();
+
+            $this->contact_methods = $this->user->settings()->where('group', 'contact')->get();
+        }else{
+            $this->user = Cache::remember('user-profile', Carbon::now()->addWeek(), function(){
+                return User::with(['tools','projects','skills','experiences','services' => function($q) {
+                    $q->where('is_featured',1);
+                }])->find(1);
+            });
+            $this->social_links = Cache::remember('settings-social', Carbon::now()->addWeek(), function (){
+                return $this->user->settings()->where(['group' => 'social'])->get();
+            });
+            $this->contact_methods = Cache::remember('settings-contact', Carbon::now()->addWeek(), function (){
+                return $this->user->settings()->where('group', 'contact')->get();
+            });
+        }
     }
 
     protected $rules = [
