@@ -1,5 +1,5 @@
 <div>
-    <div x-data="projectCard" id="number-one">
+    <div x-data="projectCard" id="number-one" class="software">
         <div class="p-4 z-50 border min-h-64 rounded-lg border-zinc-300 dark:text-zinc-400 dark:border-zinc-700/40"
             @click="modalOpen = !modalOpen">
             <p class="text-base font-semibold">{{ $project->id < 10 ? "0$project->id" : $project->id }}</p>

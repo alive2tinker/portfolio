@@ -1,5 +1,5 @@
 <div>
-    <div x-data="projectCard" id="number-one">
+    <div x-data="projectCard" id="number-one" class="software">
         <div class="p-4 z-50 border rounded-lg border-zinc-300 dark:text-zinc-400 dark:border-zinc-700/40"
             @click="modalOpen = !modalOpen">
             <h3 class="text-xl font-bold my-2">{{ Str::limit($service->title, 30, '...') }}</h3>

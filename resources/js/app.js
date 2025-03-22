@@ -1,6 +1,7 @@
 import './bootstrap';
 import '../../vendor/masmerise/livewire-toaster/resources/js'; // 👈
-import './home-animations'
+import './home-animations';
+import './projects-animations';
 const cursor = document.getElementById('cursor');
 
 // This will track the mouse movement
