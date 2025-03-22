@@ -213,26 +213,26 @@
         </div>
         <div id="collab-container">
             <!-- contact information -->
-             <div class="border border-gray-300 px-3 mx-2 rounded-xl py-4 mt-1.5">
+             <div class="border border-gray-600 px-3 mx-2 rounded-xl py-4 mt-1.5">
                 <h3 class="text-2xl mt-0.5 font-bold tracking-tight text-black dark:text-zinc-100 sm:text-3xl">{{ __('Contact Information') }}</h3>
                 <ul class="my-5 space-y-5">
                     <li class="flex">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 rounded-full bg-teal-50 hover:bg-teal-500 hover:text-white p-3">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
                         </svg>
-                        <p class="ml-2 mt-2">966548226392</p>
+                        <p class="mx-2 mt-2 dark:text-zinc-200">966548226392</p>
                     </li>
                     <li class="flex">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 rounded-full bg-teal-50 hover:bg-teal-500 hover:text-white p-3">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 1 0-2.636 6.364M16.5 12V8.25" />
                         </svg>
 
-                        <p class="ml-2 mt-2">sufayran@gmail.com</p>
+                        <p class="mx-2 mt-2 dark:text-zinc-200">sufayran@gmail.com</p>
                     </li>
                 </ul>
              </div>
              <!-- Collab -->
-             <div class="border border-gray-300 px-3 mx-2 rounded-xl py-4 mt-1.5">
+             <div class="border border-gray-600 px-3 mx-2 rounded-xl py-4 mt-1.5">
                 <h3 class="text-2xl mt-0.5 font-bold tracking-tight text-black dark:text-zinc-100 sm:text-2xl">{{ __("Let's Create Something Amazing") }}</h3>
                 <p class="mt-6 text-lg text-zinc-600 dark:text-zinc-400">{{ __("Whether you're looking to collaborate on a project or just want to say hello, I'd love to hear from you!") }}</p>
              </div>

@@ -7,6 +7,7 @@ use App\Livewire\ArticlesPage;
 use App\Livewire\ProjectsPage;
 use App\Livewire\ServicesPage;
 use Illuminate\Support\Facades\Route;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
 |--------------------------------------------------------------------------

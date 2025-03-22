@@ -79,9 +79,9 @@
                     <div x-show="menuOpen" class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white dark:bg-zinc-900 shadow-lg ring-1 ring-black dark:ring-zinc-500 ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1" x-cloak>
                         <div class="py-1" role="none">
                             <ul>
-                                @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                @foreach (\Mcamara\LaravelLocalization\Facades\LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                                 <li>
-                                    <a class="text-gray-700 dark:text-white block px-4 py-2 text-sm" id="menu-item-{{ $localeCode }}" role="menuitem" tabindex="-1" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                    <a class="text-gray-700 dark:text-white block px-4 py-2 text-sm" id="menu-item-{{ $localeCode }}" role="menuitem" tabindex="-1" rel="alternate" hreflang="{{ $localeCode }}" href="{{ \Mcamara\LaravelLocalization\Facades\LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
                                         {{ $properties['native'] }}
                                     </a>
                                 </li>
