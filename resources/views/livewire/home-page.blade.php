@@ -24,7 +24,7 @@
     <div class="max-w-5xl mx-auto py-7">
         <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 px-5 py-7">
             <div class="col-span-2 experience-container opacity-0" style="transform: translateX(-100px)">
-                <h2 class="text-2xl font-bold tracking-tight text-zinc-500 py-4 dark:text-zinc-100 sm:text-3xl">
+                <h2 class="text-2xl text-black dark:text-zinc-100 font-bold tracking-tight  py-4 sm:text-3xl">
                     {{ __('Experience') }}</h2>
                 @foreach ($user->experiences as $experience)
                     <x-experience :experience="$experience"/>
@@ -127,22 +127,26 @@
             @endforeach
         </div> --}}
         <!-- software section -->
-        <h2 class="text-2xl font-bold tracking-tight text-zinc-500 py-4 dark:text-zinc-100 sm:text-3xl mx-4 py-4">
+        <h2 class="text-2xl font-bold tracking-tight text-black dark:text-zinc-100 opacity-0 software py-4 sm:text-3xl mx-4">
             {{ __('Software') }}</h2>
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 my-4">
             @foreach($user->software() as $software)
-                <div class="text-center">
+                <div class="text-center software opacity-0">
                     <div class="flex justify-center">
-                        <img class="w-12 aspect-square rounded-full" src="storage/{{ $software->logo }}" alt="{{ $software->name }}">
+                        @if(env('APP_ENV') === 'local')
+                            <img class="w-12 aspect-square rounded-full" src="{{ asset("images/logos/{$software->logo}") }}" alt="{{ $software->name }}">
+                        @else
+                            <img class="w-12 aspect-square rounded-full" src="{{ "storage/" . $software->logo }}" alt="{{ $software->name }}">
+                        @endif
                     </div>
                     <p class="dark:text-zinc-300">{{ $software->name }}</p>
                 </div>
             @endforeach
         </div>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div class="px-6">
-            <h3 class="text-2xl mt-0.5 font-bold tracking-tight text-zinc-500 dark:text-zinc-100 sm:text-3xl">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+        <div class="" id="contact-form-container">
+            <h3 class="text-2xl mt-0.5 font-bold tracking-tight text-black dark:text-zinc-100 sm:text-3xl">
                 {{ __('Get In Touch') }}</h3>
             <form wire:submit.prevent="getContact" class="my-4" method="post">
 
@@ -207,10 +211,10 @@
                 </button>
             </form>
         </div>
-        <div>
+        <div id="collab-container">
             <!-- contact information -->
              <div class="border border-gray-300 px-3 mx-2 rounded-xl py-4 mt-1.5">
-                <h3 class="text-2xl mt-0.5 font-bold tracking-tight text-zinc-500 dark:text-zinc-100 sm:text-3xl">{{ __('Contact information') }}</h3>
+                <h3 class="text-2xl mt-0.5 font-bold tracking-tight text-black dark:text-zinc-100 sm:text-3xl">{{ __('Contact information') }}</h3>
                 <ul class="my-5 space-y-5">
                     <li class="flex">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 rounded-full bg-teal-50 hover:bg-teal-500 hover:text-white p-3">
@@ -229,7 +233,7 @@
              </div>
              <!-- Collab -->
              <div class="border border-gray-300 px-3 mx-2 rounded-xl py-4 mt-1.5">
-                <h3 class="text-2xl mt-0.5 font-bold tracking-tight text-zinc-500 dark:text-zinc-100 sm:text-2xl">{{ __("Let's Create Something Amazing") }}</h3>
+                <h3 class="text-2xl mt-0.5 font-bold tracking-tight text-black dark:text-zinc-100 sm:text-2xl">{{ __("Let's Create Something Amazing") }}</h3>
                 <p class="mt-6 text-lg text-zinc-600 dark:text-zinc-400">{{ __("Whether you're looking to collaborate on a project or just want to say hello, I'd love to hear from you!") }}</p>
              </div>
         </div>
