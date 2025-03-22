@@ -214,7 +214,7 @@
         <div id="collab-container">
             <!-- contact information -->
              <div class="border border-gray-300 px-3 mx-2 rounded-xl py-4 mt-1.5">
-                <h3 class="text-2xl mt-0.5 font-bold tracking-tight text-black dark:text-zinc-100 sm:text-3xl">{{ __('Contact information') }}</h3>
+                <h3 class="text-2xl mt-0.5 font-bold tracking-tight text-black dark:text-zinc-100 sm:text-3xl">{{ __('Contact Information') }}</h3>
                 <ul class="my-5 space-y-5">
                     <li class="flex">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 rounded-full bg-teal-50 hover:bg-teal-500 hover:text-white p-3">
