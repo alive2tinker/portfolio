@@ -1,17 +1,21 @@
 <div class="py-12">
     <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
-        <div class="mx-5 col-span-3">
-            <img class="rounded-full w-24 my-7" src="{{ asset('images/1652505616025.jpeg') }}" alt="personal photo">
+        <div class="mx-5 col-span-3 flex">
+            <div>
             <h1 class="text-4xl font-bold tracking-tight opacity-0 text-zinc-800 dark:text-zinc-100 sm:text-5xl main-description">
                 {{ $user->meta['main_description'][app()->getLocale()] }}</h1>
-            <p class="mt-6 text-lg text-zinc-600 dark:text-zinc-400">
+            <p class="mt-6 secondary-description text-lg opacity-0 text-zinc-600 dark:text-zinc-400 secondary-description">
                 {{ $user->meta['sub_description'][app()->getLocale()] }}</p>
+            </div>
+            <div>
+            <img class="rounded-full w-48 my-7 ltr:ml-48 rtl:mr-20 personal-foto opacity-0" src="{{ asset('images/1652505616025.jpeg') }}" alt="personal photo">
+            </div>
         </div>
     </div>
     <div class="mx-5 py-5 w-1/6">
         <ul class="flex justify-around">
             @foreach ($social_links as $social_link)
-                <li><a href="{{ $social_link->value }}">
+                <li class="social-link opacity-0 mt-12"><a href="{{ $social_link->value }}">
                         <x-social-icon :platform="$social_link->key"></x-social-icon>
                     </a></li>
             @endforeach
@@ -19,14 +23,14 @@
     </div>
     <div class="max-w-5xl mx-auto py-7">
         <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 px-5 py-7">
-            <div class="col-span-2">
+            <div class="col-span-2 experience-container opacity-0" style="transform: translateX(-100px)">
                 <h2 class="text-2xl font-bold tracking-tight text-zinc-500 py-4 dark:text-zinc-100 sm:text-3xl">
                     {{ __('Experience') }}</h2>
                 @foreach ($user->experiences as $experience)
                     <x-experience :experience="$experience"/>
                 @endforeach
             </div>
-            <div class="col-span-2">
+            <div class="col-span-2 opacity-0" id="skills-container" style="transform:translateX(50px)">
                 <div class="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
                     <h2 class="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
                         <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"
@@ -57,7 +61,7 @@
                             </li>
                         @endforeach
                     </ol>
-                    <div x-data="{ modalOpen: false }" class="cv-component">
+                    <div x-data="{ modalOpen: false }" class="cv-component !z-50">
                         <button @click="modalOpen = true"
                                 class="inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none bg-zinc-50 font-medium text-zinc-900 hover:bg-zinc-100 active:bg-zinc-100 active:text-zinc-900/60 dark:bg-zinc-800/50 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 dark:active:bg-zinc-800/50 dark:active:text-zinc-50/70 group mt-6 w-full">{{ __('Download CV') }}</button>
                         <div class="relative z-10" style="z-index:9999 !important;" x-cloak x-show="modalOpen"
@@ -202,6 +206,32 @@
                     </svg>
                 </button>
             </form>
+        </div>
+        <div>
+            <!-- contact information -->
+             <div class="border border-gray-300 px-3 mx-2 rounded-xl py-4 mt-1.5">
+                <h3 class="text-2xl mt-0.5 font-bold tracking-tight text-zinc-500 dark:text-zinc-100 sm:text-3xl">{{ __('Contact information') }}</h3>
+                <ul class="my-5 space-y-5">
+                    <li class="flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 rounded-full bg-teal-50 hover:bg-teal-500 hover:text-white p-3">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                        </svg>
+                        <p class="ml-2 mt-2">966548226392</p>
+                    </li>
+                    <li class="flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 rounded-full bg-teal-50 hover:bg-teal-500 hover:text-white p-3">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 1 0-2.636 6.364M16.5 12V8.25" />
+                        </svg>
+
+                        <p class="ml-2 mt-2">sufayran@gmail.com</p>
+                    </li>
+                </ul>
+             </div>
+             <!-- Collab -->
+             <div class="border border-gray-300 px-3 mx-2 rounded-xl py-4 mt-1.5">
+                <h3 class="text-2xl mt-0.5 font-bold tracking-tight text-zinc-500 dark:text-zinc-100 sm:text-2xl">{{ __("Let's Create Something Amazing") }}</h3>
+                <p class="mt-6 text-lg text-zinc-600 dark:text-zinc-400">{{ __("Whether you're looking to collaborate on a project or just want to say hello, I'd love to hear from you!") }}</p>
+             </div>
         </div>
     </div>
 </div>

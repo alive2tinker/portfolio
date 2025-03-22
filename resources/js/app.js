@@ -1,26 +1,6 @@
 import './bootstrap';
 import '../../vendor/masmerise/livewire-toaster/resources/js'; // 👈
-import anime from 'animejs/lib/anime.es.js';
-
-anime({
-    targets: '.main-description',
-    opacity: 100,
-    easing: 'easeInOutQuad',
-    duration: 5000,
-});
-
-var tl = anime.timeline({
-    easing: 'easeOutExpo',
-    duration: 750
-  });
-  
-  // Add children
-  tl
-  .add({
-    targets: '.nav-link',
-    translateX: 250,
-  });
-
+import './home-animations'
 const cursor = document.getElementById('cursor');
 
 // This will track the mouse movement
