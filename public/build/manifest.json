@@ -1,0 +1,20 @@
+{
+  "public/fonts/Dancing_Script/static/DancingScript-Bold.ttf": {
+    "file": "assets/DancingScript-Bold.5a573995.ttf",
+    "src": "public/fonts/Dancing_Script/static/DancingScript-Bold.ttf"
+  },
+  "public/fonts/Cairo/static/Cairo-Regular.ttf": {
+    "file": "assets/Cairo-Regular.837e8bac.ttf",
+    "src": "public/fonts/Cairo/static/Cairo-Regular.ttf"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app.d8e498be.js",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/css/app.css": {
+    "file": "assets/app.81c3f821.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  }
+}
