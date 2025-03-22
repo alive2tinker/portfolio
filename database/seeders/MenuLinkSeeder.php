@@ -51,6 +51,7 @@ class MenuLinkSeeder extends Seeder
                 'ar' => "الخدمات"
             ],
             'link' => "/services",
+            'location' => 'both',
             'user_id' => 1
         ]);
 
@@ -60,6 +61,7 @@ class MenuLinkSeeder extends Seeder
                 'ar' => 'المزيد'
             ],
             'link' => '#contact-form',
+            'location' => 'both',
             'user_id' => 1
         ]);
 
